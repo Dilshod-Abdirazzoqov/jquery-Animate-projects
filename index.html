@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jquery SlideUp/Down/Toggle</title>
+</head>
+<body>
+    <div class="container">
+      <h1>jQuery SlideDown</h1>
+      <div id="div1">
+          Show Accordion Style with Jquery
+      </div>
+      <ul>
+          <li>Product-1</li>
+          <li>Product-2</li>
+          <li>Product-3</li>
+          <li>Product-4</li>
+      </ul>
+    </div>
+
+    <div class="container-2">
+      <h1>Animate in jQuery</h1>
+      <button id="ctn2-btn">Let's Animate</button>
+      <div class="square"></div>
+    </div>
+
+    <div class="container-2">
+        <h1>Animate in jQuery - 2</h1>
+        <button id="ctn-btn">Let's Animate</button>
+        <div class="circle"></div>
+    </div>
+
+    <div class="container-2">
+        <h1>Animate in jQuery</h1>
+        <button id="ctn3-btn">Let's Animate</button>
+        <button id="ctn4-btn">Let's Stop </button>
+        <div class="square"></div>
+      </div>
+      <div class="container-2">
+          <h1>Callback</h1>
+          <button id="call">CallBack</button>
+          <p>Lorem ipsum dolor sit amet consectetur 
+              adipisicing elit. 
+              Explicabo repellat nulla 
+              saepe, corporis accusamus laborum!</p>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     $("#div1").click(function(){
+        //         $("ul").slideDown("slow");
+        //     })
+        // })
+        // $(document).ready(function(){
+        //     $("#div1").dblclick(function(){
+        //         $("ul").slideUp("slow");
+        //     })
+        // })
+        $(document).ready(function(){
+            $("#div1").click(function(){
+                $("ul").slideToggle("slow");
+            })
+        })
+
+        $(document).ready(function(){
+            $("#ctn2-btn").click(function(){
+                $(".square").animate({marginTop:"10px", marginLeft:"600px"});
+            })
+        })
+        $(document).ready(function(){
+
+            $("#ctn-btn").click(function(){
+                $(".circle").animate({
+                    right:"250px",
+                    opacity:"0.7",
+                    height:"180px",
+                    width:"180px"
+                }, 8000)
+            })
+        })
+
+        $(document).ready(function(){
+            $("#ctn3-btn").click(function(){
+                $(".square").animate({height:'toggle'}, 3000);
+            })
+        })
+
+        $(document).ready(function(){
+            $("#ctn4-btn").dblclick(function(){
+                $(".square").stop();
+            })
+        })
+        
+        // $(document).ready(function(){
+        //   $("#call").click(function(){
+        //       $("p").hide("slow", function(){
+        //           alert("You call callback function now");
+        //       })
+        //   })
+        // })
+
+        $(document).ready(function(){
+          $("#call").click(function(){
+            $("p").hide(2000);
+            alert("You call callback function now");
+          })
+        })
+
+        // animate() in jQuery - what does it mean ? 
+        // Present Simple syntax - S + V1 (s/es)
+        // animate({parametr}, speed, callback);
+        // callback - funksiya ketidan funksiya ishlashi.
+
+    </script>
+</body>
+</html>
